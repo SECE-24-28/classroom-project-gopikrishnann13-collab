@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 30px;
+    }
+    h1{
+        margin-bottom: 30px;
+    }
+    .cards{
+        display: flex;
+        gap:20px;
+        justify-content: center;
+    }
+    .card{
+        background-color: lightgray;
+        padding: 20px;
+        width: 250px; 
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+    .card h2{
+        margin: 0 0 10px;
+    }
+    button{
+        background-color:green;
+        color:white;
+        height: 40px;
+        width: 60px;
+        border-radius: 7px;
+
+    }
+    button:hover{
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>Flexbox cards task</h1>
+    <div class="cards">
+        <div class="card">
+            <img src="cat4.jpg"  height="167px" width="250px" alt="car">
+            <h2>Card 1</h2>
+            <p>This is a simple card using flex.</p>
+            <button>view</button>
+        </div>
+        <div class="card">
+            <img src="cat2.jpg" width="250px" alt="car">
+            <h2>Card 2</h2>
+            <p>Practice creating layouts using Flexbox.</p>
+            <button>view</button>
+        </div>
+        <div class="card">
+            <img src="cat3.jpg" width="250px" alt="car">
+            <h2>Card 3</h2>
+            <p>Try adding more cards or changing the styles.</p>
+            <button>view</button>
+        </div>
+    </div>
+</body>
+</html>
