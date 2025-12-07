@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pwd-gen-style.css">
+</head>
+<body>
+    <div class="card">
+        <h3>Simple Password Generator</h3>
+        <div class="row">
+            <input type="checkbox" id="upper" checked />
+            <label>Include uppercase (A-Z)</label>
+        </div>
+        <div class="row">
+            <input type="checkbox" id="lower" checked />
+            <label>Include lowercase (a-z)</label>
+        </div>
+        <div class="row">
+            <input type="checkbox" id="numbers" checked />
+            <label>Include numbers (1-9)</label>
+        </div>
+        <div class="row">
+            <input type="checkbox" id="symbols" checked />
+            <label>Include Symbols (!, @, #,...)</label>
+        </div>
+        <div class="row">
+            <label>Length:</label>
+            <input type="number" id="length">
+        </div>
+        <div class="row">
+            <input type="text" id="output" class="result" placeholder="Your password will appear here">
+        </div>
+        <div class="output">
+            <button id="generate">Generate</button>
+            <button id="clear">Clear</button>
+        </div>
+    </div>
+    <script>
+        const upper = "abcdefghijklmnopqrstuvwxyz";
+        const lower = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const num = "123456789";
+        const sym = "!@#$%^&*";
+
+        function generate() {
+            const parts = [];
+            if(document.getElementById("upper").checked) {
+                parts.push(upper);
+            }
+            if(document.getElementById("lower").checked) {
+                parts.push(lower);
+            }
+            if(document.getElementById("numbers").checked) {
+                parts.push(num);
+            }
+            if(document.getElementById("symbols").checked) {
+                parts.push(sym);
+            }
+
+            const length = parseInt(document.getElementById("length").value);
+
+            if(parts.length === 0) {
+                alert('Please select atleast one character set');
+                return;
+            }
+            const charset = parts.join('');
+
+            let out= '';
+
+            function randomIndex(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            for (let i = 0; i < length; i++) {
+                out += charset[randomIndex(charset.length)];
+            }
+
+            document.getElementById("output").value = out;
+        }
+
+        document.getElementById("generate").addEventListener("click", generate);
+
+        document.getElementById("clear").addEventListener("click", () => {
+            document.getElementById("output").value = '';
+        });
+    </script>
+</body>
+</html>
