@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1a3d9f);
+    /* background: #0f172a; */
+    color: #e5e7eb;
+}
+
+.card {
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 18px;
+    padding: 20px 18px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.card h3 {
+    margin: 0 0 16px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.row label {
+    flex: 1;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+input[type="number"],
+.result {
+    width: 120px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #1f2937;
+    background: #020617;
+    color: #e5e7eb;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.result {
+    width: 100%;
+}
+
+input[type="number"]:focus,
+.result:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px #2563eb;
+}
+
+::placeholder {
+    color: #6b7280;
+}
+
+.output {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+}
+
+#generate {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+}
+
+#clear {
+    background: transparent;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+button:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+    opacity: 0.9;
+}
